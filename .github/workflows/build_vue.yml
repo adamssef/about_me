@@ -1,14 +1,22 @@
 name: Build Vue
-on: [push]
+on:
+  push:
+    branches:
+      - main  # Workflow uruchomi się przy pushu do gałęzi main
+  workflow_dispatch:  # Umożliwia ręczne uruchomienie workflow z poziomu GitHub Actions
+
 jobs:
   build_vue:
     runs-on: ubuntu-latest
     name: Build Vue
+    permissions:
+      contents: write  # Umożliwia zapisywanie do repozytorium
     steps:
-      - uses: actions/checkout@v2
-      - id: Build-Vue
+      - uses: actions/checkout@v4  # Najnowsza wersja akcji checkout
+      - name: Build and Deploy Vue
+        id: Build-Vue
         uses: xRealNeon/VuePagesAction@1.0.1
         with:
           username: 'adamssef'
           reponame: 'about_me'
-          token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+          token: ${{ secrets.GITHUB_TOKEN }}  # Token dostępu do repozytorium
