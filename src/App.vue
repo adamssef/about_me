@@ -1,48 +1,12 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 import './output.css'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper bg-black">
-      <HelloWorld msg="You did it!" />
-    </div>
+  <header class="w-full flex justify-start items-center">
+    <span class="absolute h-14 w-14 border-4 border-blue bg-white">
+      <span class="absolute h-10 w-8 left-[26px] z-99 top-[2px] text-5xl font-sans bg-white">AY</span>
+    </span>
+    <span class="flex flex-col left-[96px] relative font-sans"><span class="text-3xl">Adam Youssef</span><span>Software Engineer</span></span>
   </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
